@@ -9,9 +9,9 @@ import chinaStyles from './china.module.scss';
 
 const ChinaLevel = ({ history }) => {
   const context = React.useContext(GameContext);
+  // const []
 
   React.useEffect(() => {
-    console.log(context);
     setCharacterMoving();
   }, []);
 
@@ -26,7 +26,7 @@ const ChinaLevel = ({ history }) => {
   };
 
   const handleClickCharacter = e => {
-    if (String(e.target.id) === '2') {
+    if (String(e.target.id) === '1') {
       alert('You Match');
       context.handleCompleteLevel('china');
       history.push('/worldmap');
