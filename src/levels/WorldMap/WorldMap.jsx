@@ -9,6 +9,9 @@ const WorldMap = ({ history }) => {
       <div className={worldMapStyles.countryButton} onClick={() => history.push('usa')}>
         usa
       </div>
+      <div className={worldMapStyles.countryButton} onClick={() => history.push('endgame')}>
+        Endgame
+      </div>
     </div>
   );
 };
