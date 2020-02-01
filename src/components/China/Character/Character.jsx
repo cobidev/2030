@@ -1,15 +1,15 @@
 import React from 'react';
-import chineseCharacterImg from '../../../assets/chinese-character.png';
 
 import characterStyles from './character.module.scss';
 
-const Character = () => {
+const Character = ({ image, speed, onClick }) => {
   return (
     <>
       <img
-        className={characterStyles.chineseCharacter}
-        src={chineseCharacterImg}
-        alt='Chinese Character'
+        onClick={onClick}
+        className={`${characterStyles.chineseCharacter} chinese-character speed-${speed}`}
+        src={image}
+        alt="Chinese Character"
       />
     </>
   );
