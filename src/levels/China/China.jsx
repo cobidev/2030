@@ -1,7 +1,7 @@
-import React from "react";
-import ChineseCharacter from "../../components/China/Character/Character";
+import React from 'react';
+import ChineseCharacter from '../../components/China/Character/Character';
 
-import chinaStyles from "./china.module.scss";
+import chinaStyles from './china.module.scss';
 
 const ChinaLevel = () => {
   return (
