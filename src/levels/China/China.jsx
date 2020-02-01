@@ -1,12 +1,17 @@
 import React from 'react';
 import { TweenMax, Linear } from 'gsap';
-import ChineseCharacter from '../../components/China/Character/Character';
+import { withRouter } from 'react-router-dom';
+import GameContext from '../../context/gameContext';
 import { charactersData } from './data';
 
+import ChineseCharacter from '../../components/China/Character/Character';
 import chinaStyles from './china.module.scss';
 
-const ChinaLevel = () => {
+const ChinaLevel = ({ history }) => {
+  const context = React.useContext(GameContext);
+
   React.useEffect(() => {
+    console.log(context);
     setCharacterMoving();
   }, []);
 
@@ -20,15 +25,25 @@ const ChinaLevel = () => {
     });
   };
 
-  const handleClickCharacter = () => {
-    alert('You clicked a Chinese 👲🏻');
+  const handleClickCharacter = e => {
+    if (String(e.target.id) === '2') {
+      alert('You Match');
+      context.handleCompleteLevel('china');
+      history.push('/worldmap');
+    }
   };
 
   return (
     <div className={chinaStyles.china}>
       <main className={chinaStyles.main}>
         {charactersData.map(({ id, url }) => (
-          <ChineseCharacter onClick={handleClickCharacter} key={id} speed={id} image={url} />
+          <ChineseCharacter
+            onClick={handleClickCharacter}
+            id={id}
+            key={id}
+            speed={id}
+            image={url}
+          />
         ))}
       </main>
       <footer className={chinaStyles.footer}></footer>
@@ -36,4 +51,4 @@ const ChinaLevel = () => {
   );
 };
 
-export default ChinaLevel;
+export default withRouter(ChinaLevel);
