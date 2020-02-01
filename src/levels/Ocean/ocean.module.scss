@@ -1,0 +1,22 @@
+.oceanContainer {
+  background-image: url('./oceanBackground.png');
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.tortoiseDrawing {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.tortoiseDrawingFront {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
