@@ -2,40 +2,40 @@
   height: 12%;
   width: 12%;
   border: 1px solid white;
-  position: relative;
-  top: 26rem;
+  position: absolute;
+  top: 33rem;
   left: 24rem;
 }
 .countryButtonChina {
   height: 15%;
   width: 15%;
   border: 1px solid white;
-  position: relative;
-  top: 10rem;
+  position: absolute;
+  top: 25rem;
   left: 90rem;
 }
 .countryButtonEurope {
   height: 15%;
   width: 10%;
   border: 1px solid white;
-  position: relative;
-  top: -5rem;
+  position: absolute;
+  top: 17rem;
   left: 60rem;
 }
 .countryButtonAustralia {
   height: 10%;
   width: 10%;
   border: 1px solid white;
-  position: relative;
-  top: 15rem;
+  position: absolute;
+  top: 55rem;
   left: 110rem;
 }
 .countryButtonOcean {
   height: 15%;
   width: 15%;
   border: 1px solid white;
-  position: relative;
-  top: 12rem;
+  position: absolute;
+  top: 50rem;
   left: 70rem;
 }
 
@@ -46,4 +46,5 @@
   background-size: cover;
   background-position: center;
   overflow: hidden;
+  position: relative;
 }
