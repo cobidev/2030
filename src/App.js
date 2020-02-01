@@ -1,11 +1,11 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
 
-import UsaLevel from "./levels/UsaLevel";
-import AustraliaLevel from "./levels/AustraliaLevel";
-import ChinaLevel from "./levels/ChinaLevel";
-import EuropeLevel from "./levels/EuropeLevel";
-import OceanLevel from "./levels/OceanLevel";
+import UsaLevel from "./levels/Usa/Usa";
+import AustraliaLevel from "./levels/Australia/Australia";
+import ChinaLevel from "./levels/China/China";
+import EuropeLevel from "./levels/Europe/Europe";
+import OceanLevel from "./levels/Ocean/Ocean";
 
 import "./App.css";
 
