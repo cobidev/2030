@@ -1,46 +1,46 @@
 .countryButtonUsa {
-  height: 10%;
-  width: 10%;
-  background-color: red;
+  height: 12%;
+  width: 12%;
+  border: 1px solid white;
   position: relative;
-  top: 20rem;
-  left: 25rem;
+  top: 26rem;
+  left: 24rem;
 }
 .countryButtonChina {
-  height: 10%;
-  width: 10%;
-  background-color: red;
+  height: 15%;
+  width: 15%;
+  border: 1px solid white;
   position: relative;
-  top: 14rem;
-  left: 93rem;
+  top: 10rem;
+  left: 90rem;
 }
 .countryButtonEurope {
-  height: 10%;
+  height: 15%;
   width: 10%;
-  background-color: red;
+  border: 1px solid white;
   position: relative;
-  top: 1rem;
+  top: -5rem;
   left: 60rem;
 }
 .countryButtonAustralia {
   height: 10%;
   width: 10%;
-  background-color: red;
+  border: 1px solid white;
   position: relative;
-  top: 24rem;
+  top: 15rem;
   left: 110rem;
 }
 .countryButtonOcean {
-  height: 10%;
-  width: 10%;
-  background-color: red;
+  height: 15%;
+  width: 15%;
+  border: 1px solid white;
   position: relative;
-  top: 11rem;
-  left: 53rem;
+  top: 12rem;
+  left: 70rem;
 }
 
 .worldMapContainer {
-  background-image: url('../../assets/worldmap.png');
+  background-image: url('./worldmap.png');
   height: 100vh;
   width: 100%;
   background-size: cover;
