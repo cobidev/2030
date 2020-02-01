@@ -1,24 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Switch, Route } from "react-router-dom";
+
+import UsaLevel from "./levels/UsaLevel";
+import AustraliaLevel from "./levels/AustraliaLevel";
+import ChinaLevel from "./levels/ChinaLevel";
+import EuropeLevel from "./levels/EuropeLevel";
+import OceanLevel from "./levels/OceanLevel";
+
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Switch>
+        <Route exact path="/usa" component={UsaLevel} />
+        <Route exact path="/australia" component={AustraliaLevel} />
+        <Route exact path="/china" component={ChinaLevel} />
+        <Route exact path="/europe" component={EuropeLevel} />
+        <Route exact path="/ocean" component={OceanLevel} />
+      </Switch>
     </div>
   );
 }
