@@ -1,5 +1,49 @@
-.countryButton {
-  height: 100px;
-  width: 100px;
+.countryButtonUsa {
+  height: 10%;
+  width: 10%;
   background-color: red;
+  position: relative;
+  top: 20rem;
+  left: 25rem;
+}
+.countryButtonChina {
+  height: 10%;
+  width: 10%;
+  background-color: red;
+  position: relative;
+  top: 14rem;
+  left: 93rem;
+}
+.countryButtonEurope {
+  height: 10%;
+  width: 10%;
+  background-color: red;
+  position: relative;
+  top: 1rem;
+  left: 60rem;
+}
+.countryButtonAustralia {
+  height: 10%;
+  width: 10%;
+  background-color: red;
+  position: relative;
+  top: 24rem;
+  left: 110rem;
+}
+.countryButtonOcean {
+  height: 10%;
+  width: 10%;
+  background-color: red;
+  position: relative;
+  top: 11rem;
+  left: 53rem;
+}
+
+.worldMapContainer {
+  background-image: url('../../assets/worldmap.png');
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
 }
