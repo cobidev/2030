@@ -6,11 +6,11 @@ const Credits = ({ history }) => {
   return (
     <div>
       <h1>Credits</h1>
-      <div className={creditsStyles.countryButton} onClick={() => history.push('')}>
+      <div className={creditsStyles.countryButton} onClick={() => history.push('/menu')}>
         Back
       </div>
     </div>
   );
 };
 
-export default Credits;
+export default withRouter(Credits);

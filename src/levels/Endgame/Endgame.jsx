@@ -22,7 +22,7 @@ const Endgame = ({ history }) => {
           </div>
         </div>
       ) : (
-        history.push('/')
+        history.push('/menu')
       )}
     </>
   );

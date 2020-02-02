@@ -10,10 +10,11 @@ import EuropeLevel from './levels/Europe/Europe';
 import OceanLevel from './levels/Ocean/Ocean';
 import WorldMap from './levels/WorldMap/WorldMap';
 import Endgame from './levels/Endgame/Endgame';
+import MainVideo from './levels/MainVideo/MainVideo';
 
 import './App.css';
 
-const App = props => {
+const App = () => {
   const [levelStatus, setLevelStatus] = React.useState({
     australia: null,
     usa: null,
@@ -75,7 +76,8 @@ const App = props => {
           </audio>
         ) : null}
         <Switch>
-          <Route exact path="/" component={MainMenu} />
+          <Route exact path="/" component={MainVideo} />
+          <Route exact path="/menu" component={MainMenu} />
           <Route exact path="/worldmap" component={WorldMap} />
           <Route exact path="/worldmap/usa" component={UsaLevel} />
           <Route exact path="/worldmap/australia" component={AustraliaLevel} />
