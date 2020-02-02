@@ -5,7 +5,7 @@ import creditsStyles from './credits.module.scss';
 const Credits = ({ history }) => {
   return (
     <div>
-      <h1>Instructions</h1>
+      <h1>Credits</h1>
       <div className={creditsStyles.countryButton} onClick={() => history.push('')}>
         Back
       </div>
