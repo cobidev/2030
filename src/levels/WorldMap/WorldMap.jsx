@@ -1,7 +1,6 @@
 import React from 'react';
 import GameContext from '../../context/gameContext';
 
-import China from '../China/China';
 import worldMapStyles from './worldmap.module.scss';
 
 const WorldMap = ({ history }) => {

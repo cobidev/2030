@@ -9,7 +9,7 @@ const Endgame = ({ history }) => {
 
   const handleBackToHome = () => {
     context.handleClearState();
-    history.push('/');
+    history.push('/menu');
   };
 
   return (
