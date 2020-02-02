@@ -1,19 +1,31 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import GameContext from '../../context/gameContext';
+
 import endgameStyles from './endgame.module.scss';
 
 const Endgame = ({ history }) => {
+  const context = React.useContext(GameContext);
+
+  const handleBackToHome = () => {
+    context.handleExitGame();
+    history.push('/');
+  };
+
   return (
-    <div>
-      <h1>Endgame</h1>
-      <div className={endgameStyles.countryButton} onClick={() => history.push('worldmap')}>
-        Try again
-      </div>
-      <div className={endgameStyles.countryButton} onClick={() => history.push('')}>
-        Back to menu
-      </div>
-    </div>
+    <>
+      {context.isGameStarted ? (
+        <div>
+          <h1>You lose!</h1>
+          <div className={endgameStyles.countryButton} onClick={handleBackToHome}>
+            Back to menu
+          </div>
+        </div>
+      ) : (
+        history.push('/')
+      )}
+    </>
   );
 };
 
-export default Endgame;
+export default withRouter(Endgame);
