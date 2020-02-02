@@ -26,7 +26,7 @@ const App = () => {
     isGameStarted: false,
   });
 
-  const handleCompleteLevel = (level, isCompleted = 'failed') => {
+  const handleCompleteLevel = (level, isCompleted) => {
     setLevelStatus({
       ...levelStatus,
       [level]: isCompleted,
@@ -44,19 +44,19 @@ const App = () => {
         isWorldOver: true,
         isGameStarted: true,
       });
-      setLevelStatus({
-        ...levelStatus,
-        australia: null,
-        usa: null,
-        china: null,
-        ocean: null,
-        europe: null,
-      });
     }, 20000);
   };
 
-  const handleExitGame = () => {
+  const handleClearState = () => {
     setGameStatus({ ...gameStatus, isGameStarted: false, isWorldOver: false });
+    setLevelStatus({
+      ...levelStatus,
+      australia: null,
+      usa: null,
+      china: null,
+      ocean: null,
+      europe: null,
+    });
   };
 
   return (
@@ -66,7 +66,7 @@ const App = () => {
         ...gameStatus,
         handleCompleteLevel,
         handleStartGlobalTime,
-        handleExitGame,
+        handleClearState,
       }}
     >
       <div className="App">
