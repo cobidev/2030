@@ -26,7 +26,7 @@ const App = () => {
     isGameStarted: false,
   });
 
-  const handleCompleteLevel = (level, isCompleted = false) => {
+  const handleCompleteLevel = (level, isCompleted = 'failed') => {
     setLevelStatus({
       ...levelStatus,
       [level]: isCompleted,

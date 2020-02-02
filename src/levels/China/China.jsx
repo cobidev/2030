@@ -18,7 +18,7 @@ const ChinaLevel = ({ history }) => {
   React.useEffect(() => {
     setTimeout(() => {
       if (!context.china) {
-        context.handleCompleteLevel('china', true);
+        context.handleCompleteLevel('china', 'failed');
         history.push('/worldmap');
       }
       return;
@@ -38,14 +38,15 @@ const ChinaLevel = ({ history }) => {
   const handleClickCharacter = e => {
     if (String(e.target.id) === '1') {
       alert('You Match');
-      context.handleCompleteLevel('china', true);
+      context.handleCompleteLevel('china', 'completed');
       history.push('/worldmap');
     }
   };
 
   return (
     <>
-      {context.isGameStarted && context.china ? (
+      {(context.isGameStarted && context.china === 'completed') ||
+      (context.isGameStarted && context.china === 'failed') ? (
         history.push('/worldmap')
       ) : context.isGameStarted ? (
         <div className={chinaStyles.china}>

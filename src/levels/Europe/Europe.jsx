@@ -10,7 +10,7 @@ const EuropeLevel = ({ history }) => {
   React.useEffect(() => {
     setTimeout(() => {
       if (!context.europe) {
-        context.handleCompleteLevel('europe', null);
+        context.handleCompleteLevel('europe', 'failed');
         history.push('/worldmap');
       }
       return;
@@ -19,7 +19,8 @@ const EuropeLevel = ({ history }) => {
 
   return (
     <>
-      {context.isGameStarted && context.europe ? (
+      {(context.isGameStarted && context.europe === 'completed') ||
+      (context.isGameStarted && context.europe === ' failed') ? (
         history.push('/worldmap')
       ) : context.isGameStarted ? (
         <div className={europeStyles.europe}>
