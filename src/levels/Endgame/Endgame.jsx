@@ -17,6 +17,7 @@ const Endgame = ({ history }) => {
       {context.isGameStarted && context.isWorldOver ? (
         <div className={endgameStyles.endGameWrapper}>
           <div className={endgameStyles.gameOverGif}></div>
+          <div className={endgameStyles.dontWorryText}></div>
           <div className={endgameStyles.tryAgainButton} onClick={handleBackToHome}></div>
         </div>
       ) : (
