@@ -1,4 +1,4 @@
-const peopleSick = ['man-sick', 'woman-sick'];
+const peopleSick = ['man-sick', 'man-sick-2'];
 const randomSick = peopleSick[Math.round(Math.random() * 1)];
 
 export const charactersData = [
@@ -13,17 +13,17 @@ export const charactersData = [
     id: 2,
   },
   {
-    url: `/assets/china/man-normal.png`,
+    url: `/assets/china/man-normal-2.png`,
     speed: 2.2,
     id: 3,
   },
   {
-    url: `/assets/china/woman-normal.png`,
+    url: `/assets/china/man-normal.png`,
     speed: 2,
     id: 4,
   },
   {
-    url: `/assets/china/woman-normal.png`,
+    url: `/assets/china/man-normal-2.png`,
     speed: 2.4,
     id: 5,
   },
