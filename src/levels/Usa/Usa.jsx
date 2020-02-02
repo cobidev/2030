@@ -26,9 +26,9 @@ const UsaLevel = ({ history }) => {
   ]);
   const [wallRightUrl, setWallRightUrl] = React.useState('');
 
-  let wallLeftScore = 0;
-  let wallMiddleScore = 0;
-  let wallRightScore = 0;
+  let [wallLeftScore, setWallLeftScore] = React.useState(0);
+  let [wallMiddleScore, setWallMiddleScore] = React.useState(0);
+  let [wallRightScore, setWallRightScore] = React.useState(0);
 
   const context = React.useContext(GameContext);
 
@@ -52,21 +52,19 @@ const UsaLevel = ({ history }) => {
     switch (wall) {
       case 'left':
         if (wallLeftScore < 2) {
-          wallLeftScore++;
+          setWallLeftScore(wallLeftScore++);
           setWallLeftUrl(wallLeftArray[wallLeftScore]);
         }
         break;
       case 'middle':
         if (wallMiddleScore < 2) {
-          console.log(wallMiddleScore);
-          wallMiddleScore++;
+          setWallMiddleScore(wallMiddleScore++);
           setWallMiddleUrl(wallMiddleArray[wallMiddleScore]);
         }
         break;
       case 'right':
         if (wallRightScore < 2) {
-          console.log('holis');
-          wallRightScore++;
+          setWallRightScore(wallRightScore++);
           setWallRightUrl(wallRightArray[wallRightScore]);
         }
         break;
@@ -75,7 +73,7 @@ const UsaLevel = ({ history }) => {
     }
     if (wallLeftScore == 2 && wallMiddleScore == 2 && wallRightScore == 2) {
       alert('You Win');
-      context.handleCompleteLevel('ocean', 'completed');
+      context.handleCompleteLevel('usa', 'completed');
       history.push('/worldmap');
     }
   };
