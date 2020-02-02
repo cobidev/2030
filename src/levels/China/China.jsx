@@ -24,7 +24,6 @@ const ChinaLevel = ({ history }) => {
   React.useEffect(() => {
     setTimeout(() => {
       if (!context.china) {
-        context.handleCompleteLevel('china', 'failed');
         history.push('/worldmap');
       }
       return;

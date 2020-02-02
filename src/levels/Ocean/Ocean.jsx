@@ -26,7 +26,6 @@ const OceanLevel = ({ history }) => {
   React.useEffect(() => {
     setTimeout(() => {
       if (!context.ocean) {
-        context.handleCompleteLevel('ocean', 'failed');
         history.push('/worldmap');
         return;
       }

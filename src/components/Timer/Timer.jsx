@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import GameContext from '../../context/gameContext';
 
 import timerStyles from './timer.module.scss';
 
@@ -33,7 +34,7 @@ export default class Timer extends Component {
       <div>
         {seconds === 0 ? (
           <div className={timerStyles.timerWrapper}>
-            <h1>Perdiste :(</h1>
+            <h1>You lose!</h1>
           </div>
         ) : null}
       </div>
