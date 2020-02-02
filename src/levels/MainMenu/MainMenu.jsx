@@ -23,6 +23,9 @@ const MainMenu = ({ history }) => {
         <Endgame />
       ) : (
         <div>
+          <audio autoplay="autoplay" loop>
+            <source src="assets/music/home.mp3" />
+          </audio>
           <h1>Main Menu</h1>
           <div className={mainMenuStyles.countryButton} onClick={startGame}>
             Start Game

@@ -1,6 +1,7 @@
 import React from 'react';
 import GameContext from '../../context/gameContext';
 
+import China from '../China/China';
 import worldMapStyles from './worldmap.module.scss';
 
 const WorldMap = ({ history }) => {
@@ -11,13 +12,13 @@ const WorldMap = ({ history }) => {
       {!context.isGameStarted ? (
         history.push('/')
       ) : context.isWorldOver ? (
-        history.push('/end')
+        history.push('/worldmap/end')
       ) : (
         <div className={worldMapStyles.worldMapContainer}>
           <div
             style={{ pointerEvents: context.usa === 'failed' ? 'none' : 'initial' }}
             className={`${worldMapStyles.countryIcon} ${worldMapStyles.usa}`}
-            onClick={() => history.push('usa')}
+            onClick={() => history.push('/worldmap/usa')}
           >
             {context.usa !== 'completed' ? (
               <img
@@ -30,7 +31,7 @@ const WorldMap = ({ history }) => {
           <div
             style={{ pointerEvents: context.china === 'failed' ? 'none' : 'initial' }}
             className={`${worldMapStyles.countryIcon} ${worldMapStyles.china}`}
-            onClick={() => history.push('china')}
+            onClick={() => history.push('/worldmap/china')}
           >
             {context.china !== 'completed' ? (
               <img
@@ -43,7 +44,7 @@ const WorldMap = ({ history }) => {
           <div
             style={{ pointerEvents: context.europe === 'failed' ? 'none' : 'initial' }}
             className={`${worldMapStyles.countryIcon} ${worldMapStyles.europe}`}
-            onClick={() => history.push('europe')}
+            onClick={() => history.push('/worldmap/europe')}
           >
             {context.europe !== 'completed' ? (
               <img
@@ -56,7 +57,7 @@ const WorldMap = ({ history }) => {
           <div
             style={{ pointerEvents: context.australia === 'failed' ? 'none' : 'initial' }}
             className={`${worldMapStyles.countryIcon} ${worldMapStyles.australia}`}
-            onClick={() => history.push('australia')}
+            onClick={() => history.push('/worldmap/australia')}
           >
             {context.australia !== 'completed' ? (
               <img
@@ -69,7 +70,7 @@ const WorldMap = ({ history }) => {
           <div
             style={{ pointerEvents: context.ocean === 'failed' ? 'none' : 'initial' }}
             className={`${worldMapStyles.countryIcon} ${worldMapStyles.ocean}`}
-            onClick={() => history.push('ocean')}
+            onClick={() => history.push('/worldmap/ocean')}
           >
             {context.ocean !== 'completed' ? (
               <img

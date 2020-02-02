@@ -13,7 +13,7 @@ import Endgame from './levels/Endgame/Endgame';
 
 import './App.css';
 
-const App = () => {
+const App = props => {
   const [levelStatus, setLevelStatus] = React.useState({
     australia: null,
     usa: null,
@@ -58,7 +58,6 @@ const App = () => {
       europe: null,
     });
   };
-
   return (
     <GameProvider
       value={{
@@ -70,16 +69,21 @@ const App = () => {
       }}
     >
       <div className="App">
+        {window.location.pathname.includes('worldmap') ? (
+          <audio autoplay="autoplay" loop>
+            <source src="assets/music/doom.mp3" />
+          </audio>
+        ) : null}
         <Switch>
           <Route exact path="/" component={MainMenu} />
-          <Route exact path="/credits" component={Credits} />
-          <Route exact path="/usa" component={UsaLevel} />
-          <Route exact path="/australia" component={AustraliaLevel} />
-          <Route exact path="/china" component={ChinaLevel} />
-          <Route exact path="/europe" component={EuropeLevel} />
-          <Route exact path="/ocean" component={OceanLevel} />
           <Route exact path="/worldmap" component={WorldMap} />
-          <Route exact path="/end" component={Endgame} />
+          <Route exact path="/worldmap/usa" component={UsaLevel} />
+          <Route exact path="/worldmap/australia" component={AustraliaLevel} />
+          <Route exact path="/worldmap/china" component={ChinaLevel} />
+          <Route exact path="/worldmap/europe" component={EuropeLevel} />
+          <Route exact path="/worldmap/ocean" component={OceanLevel} />
+          <Route exact path="/worldmap/end" component={Endgame} />
+          <Route exact path="/credits" component={Credits} />
         </Switch>
       </div>
     </GameProvider>
