@@ -1,5 +1,44 @@
-.countryButton {
-  height: 100px;
-  width: 100px;
-  background-color: red;
+.endGameWrapper {
+  background-color: black;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.gameOverGif {
+  background-image: url('./gameover.gif');
+  height: 200px;
+  width: 70%;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.tryAgainButton {
+  background-image: url('./try-again.png');
+  height: 200px;
+  width: 70%;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+
+  &:hover {
+    animation: move 0.2s infinite;
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(5px);
+  }
 }

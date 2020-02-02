@@ -15,11 +15,9 @@ const Endgame = ({ history }) => {
   return (
     <>
       {context.isGameStarted && context.isWorldOver ? (
-        <div>
-          <h1>You lose!</h1>
-          <div className={endgameStyles.countryButton} onClick={handleBackToHome}>
-            Back to menu
-          </div>
+        <div className={endgameStyles.endGameWrapper}>
+          <div className={endgameStyles.gameOverGif}></div>
+          <div className={endgameStyles.tryAgainButton} onClick={handleBackToHome}></div>
         </div>
       ) : (
         history.push('/menu')
