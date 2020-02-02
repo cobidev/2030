@@ -23,7 +23,7 @@ const MainMenu = ({ history }) => {
         <Endgame />
       ) : (
         <div>
-          <audio autoplay="autoplay" loop>
+          <audio autoPlay="autoplay" loop>
             <source src="assets/music/home.mp3" />
           </audio>
           <h1>Main Menu</h1>
