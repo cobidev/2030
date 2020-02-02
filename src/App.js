@@ -2,7 +2,6 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { GameProvider } from './context/gameContext';
 import MainMenu from './levels/MainMenu/MainMenu';
-import Instructions from './levels/Instructions/Instructions';
 import Credits from './levels/Credits/Credits';
 import UsaLevel from './levels/Usa/Usa';
 import AustraliaLevel from './levels/Australia/Australia';
@@ -15,27 +14,64 @@ import Endgame from './levels/Endgame/Endgame';
 import './App.css';
 
 const App = () => {
+  const [levelStatus, setLevelStatus] = React.useState({
+    australia: null,
+    usa: null,
+    china: null,
+    ocean: null,
+    europe: null,
+  });
   const [gameStatus, setGameStatus] = React.useState({
-    australia: false,
-    usa: false,
-    china: false,
-    ocean: false,
-    europe: false,
+    isWorldOver: false,
+    isGameStarted: false,
   });
 
-  const handleCompleteLevel = level => {
-    setGameStatus({
-      ...gameStatus,
-      [level]: !gameStatus[level],
+  const handleCompleteLevel = (level, isCompleted = false) => {
+    setLevelStatus({
+      ...levelStatus,
+      [level]: isCompleted,
     });
   };
 
+  const handleStartGlobalTime = () => {
+    if (gameStatus.isWorldOver) return;
+
+    setGameStatus({ ...gameStatus, isGameStarted: true });
+
+    setTimeout(() => {
+      setGameStatus({
+        ...gameStatus,
+        isWorldOver: true,
+        isGameStarted: true,
+      });
+      setLevelStatus({
+        ...levelStatus,
+        australia: null,
+        usa: null,
+        china: null,
+        ocean: null,
+        europe: null,
+      });
+    }, 20000);
+  };
+
+  const handleExitGame = () => {
+    setGameStatus({ ...gameStatus, isGameStarted: false, isWorldOver: false });
+  };
+
   return (
-    <GameProvider value={{ ...gameStatus, handleCompleteLevel }}>
+    <GameProvider
+      value={{
+        ...levelStatus,
+        ...gameStatus,
+        handleCompleteLevel,
+        handleStartGlobalTime,
+        handleExitGame,
+      }}
+    >
       <div className="App">
         <Switch>
           <Route exact path="/" component={MainMenu} />
-          <Route exact path="/instructions" component={Instructions} />
           <Route exact path="/credits" component={Credits} />
           <Route exact path="/usa" component={UsaLevel} />
           <Route exact path="/australia" component={AustraliaLevel} />
@@ -43,7 +79,7 @@ const App = () => {
           <Route exact path="/europe" component={EuropeLevel} />
           <Route exact path="/ocean" component={OceanLevel} />
           <Route exact path="/worldmap" component={WorldMap} />
-          <Route exact path="/endgame" component={Endgame} />
+          <Route exact path="/end" component={Endgame} />
         </Switch>
       </div>
     </GameProvider>
