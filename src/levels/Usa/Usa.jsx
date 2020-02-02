@@ -38,15 +38,15 @@ const UsaLevel = ({ history }) => {
     }
   }, []);
 
-  // React.useEffect(() => {
-  //   setTimeout(() => {
-  //     if (!context.usa) {
-  //       context.handleCompleteLevel('usa', 'failed');
-  //       history.push('/worldmap');
-  //     }
-  //     return;
-  //   }, 6000);
-  // }, []);
+  React.useEffect(() => {
+    setTimeout(() => {
+      if (!context.usa) {
+        context.handleCompleteLevel('usa', 'failed');
+        history.push('/worldmap');
+      }
+      return;
+    }, 6000);
+  }, []);
 
   const breakWall = wall => {
     switch (wall) {
@@ -85,7 +85,7 @@ const UsaLevel = ({ history }) => {
         history.push('/worldmap')
       ) : context.isGameStarted ? (
         <div className={usaStyles.usaContainer}>
-          {/* <Timer /> */}
+          <Timer />
           <div className={usaStyles.player}></div>
           <div className={usaStyles.trump}></div>
           <div
