@@ -67,7 +67,7 @@ const OceanLevel = ({ history }) => {
         <div className={oceanStyles.oceanContainer}>
           <Timer />
           <img
-            src="assets/ocean/tortoiseBack.png"
+            src="/assets/ocean/tortoiseBack.png"
             alt="Tortoise Back"
             className={oceanStyles.tortoiseDrawing}
           />
@@ -75,7 +75,7 @@ const OceanLevel = ({ history }) => {
             <div ref={draggableStraw} className={oceanStyles.tortoiseStraw}></div>
           </Draggable>
           <img
-            src="assets/ocean/tortoiseFront.png"
+            src="/assets/ocean/tortoiseFront.png"
             alt="Tortoise Front"
             className={oceanStyles.tortoiseDrawingFront}
           />
