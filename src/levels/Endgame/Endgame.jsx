@@ -8,13 +8,13 @@ const Endgame = ({ history }) => {
   const context = React.useContext(GameContext);
 
   const handleBackToHome = () => {
-    context.handleExitGame();
+    context.handleClearState();
     history.push('/');
   };
 
   return (
     <>
-      {context.isGameStarted ? (
+      {context.isGameStarted && context.isWorldOver ? (
         <div>
           <h1>You lose!</h1>
           <div className={endgameStyles.countryButton} onClick={handleBackToHome}>

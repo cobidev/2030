@@ -8,6 +8,10 @@ import mainMenuStyles from './mainmenu.module.scss';
 const MainMenu = ({ history }) => {
   const context = React.useContext(GameContext);
 
+  React.useEffect(() => {
+    context.handleClearState();
+  }, []);
+
   const startGame = () => {
     context.handleStartGlobalTime();
     history.push('/worldmap');

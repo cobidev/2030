@@ -8,13 +8,19 @@ const EuropeLevel = ({ history }) => {
   const context = React.useContext(GameContext);
 
   React.useEffect(() => {
+    if (context.europe === 'failed') {
+      history.push('/worldmap');
+    }
+  }, []);
+
+  React.useEffect(() => {
     setTimeout(() => {
       if (!context.europe) {
         context.handleCompleteLevel('europe', 'failed');
         history.push('/worldmap');
       }
       return;
-    }, 5500);
+    }, 6000);
   }, []);
 
   return (

@@ -12,6 +12,12 @@ const ChinaLevel = ({ history }) => {
   const context = React.useContext(GameContext);
 
   React.useEffect(() => {
+    if (context.china === 'failed') {
+      history.push('/worldmap');
+    }
+  }, []);
+
+  React.useEffect(() => {
     setCharacterMoving();
   }, []);
 
@@ -22,7 +28,7 @@ const ChinaLevel = ({ history }) => {
         history.push('/worldmap');
       }
       return;
-    }, 5500);
+    }, 6000);
   }, []);
 
   const setCharacterMoving = () => {
