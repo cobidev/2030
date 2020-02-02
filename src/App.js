@@ -26,6 +26,21 @@ const App = () => {
     isWorldOver: false,
     isGameStarted: false,
   });
+  const [time, setTime] = React.useState({ seconds: 20 });
+
+  React.useEffect(() => {
+    if (time.seconds <= 0) {
+      if (gameStatus.isWorldOver === false) {
+        setGameStatus({ ...gameStatus, isWorldOver: true });
+        setTime({ seconds: null });
+      }
+
+      if (window.location.pathname.includes('menu')) {
+        setGameStatus({ ...gameStatus, isWorldOver: false });
+        setTime({ seconds: null });
+      }
+    }
+  }, [time.seconds]);
 
   const handleCompleteLevel = (level, isCompleted) => {
     setLevelStatus({
@@ -38,14 +53,19 @@ const App = () => {
     if (gameStatus.isWorldOver) return;
 
     setGameStatus({ ...gameStatus, isGameStarted: true });
+    setTime({ seconds: 20 });
 
-    setTimeout(() => {
-      setGameStatus({
-        ...gameStatus,
-        isWorldOver: true,
-        isGameStarted: true,
-      });
-    }, 20000);
+    let interval = setInterval(() => {
+      if (time.seconds > 0) {
+        setTime(({ seconds }) => ({
+          seconds: seconds - 1,
+        }));
+      }
+
+      if (time.seconds <= 0) {
+        clearInterval(interval);
+      }
+    }, 1000);
   };
 
   const handleClearState = () => {
@@ -59,11 +79,15 @@ const App = () => {
       europe: null,
     });
   };
+
   return (
     <GameProvider
       value={{
         ...levelStatus,
         ...gameStatus,
+        ...time,
+        setTime,
+        setGameStatus,
         handleCompleteLevel,
         handleStartGlobalTime,
         handleClearState,
@@ -75,6 +99,7 @@ const App = () => {
             <source src="assets/music/doom.mp3" />
           </audio>
         ) : null}
+
         <Switch>
           <Route exact path="/" component={MainVideo} />
           <Route exact path="/menu" component={MainMenu} />

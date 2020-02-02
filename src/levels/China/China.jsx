@@ -5,6 +5,7 @@ import GameContext from '../../context/gameContext';
 import { charactersData } from './data';
 
 import ChineseCharacter from '../../components/China/Character/Character';
+import DoomsdayTimer from '../../components/DoomsdayTimer/DoomsdayTimer';
 import Timer from '../../components/Timer/Timer';
 import chinaStyles from './china.module.scss';
 
@@ -42,7 +43,6 @@ const ChinaLevel = ({ history }) => {
 
   const handleClickCharacter = e => {
     if (String(e.target.id) === '1') {
-      alert('You Match');
       context.handleCompleteLevel('china', 'completed');
       history.push('/worldmap');
     }
@@ -55,6 +55,7 @@ const ChinaLevel = ({ history }) => {
         history.push('/worldmap')
       ) : context.isGameStarted ? (
         <div className={chinaStyles.china}>
+          <DoomsdayTimer history={history} />
           <Timer />
           <main className={chinaStyles.main}>
             {charactersData.map(({ id, url }) => (

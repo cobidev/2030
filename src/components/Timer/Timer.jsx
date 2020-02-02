@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import GameContext from '../../context/gameContext';
 
 import timerStyles from './timer.module.scss';
 

@@ -7,6 +7,12 @@ import endgameStyles from './endgame.module.scss';
 const Endgame = ({ history }) => {
   const context = React.useContext(GameContext);
 
+  React.useEffect(() => {
+    if (context.seconds <= 0) {
+      context.setTime({ seconds: null });
+    }
+  }, []);
+
   const handleBackToHome = () => {
     context.handleClearState();
     history.push('/menu');

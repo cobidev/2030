@@ -3,6 +3,7 @@ import Draggable from 'react-draggable';
 import GameContext from '../../context/gameContext';
 import { withRouter } from 'react-router-dom';
 
+import DoomsdayTimer from '../../components/DoomsdayTimer/DoomsdayTimer';
 import Timer from '../../components/Timer/Timer';
 import oceanStyles from './ocean.module.scss';
 
@@ -35,7 +36,6 @@ const OceanLevel = ({ history }) => {
   React.useEffect(() => {
     const { x } = draggableStraw.current.getBoundingClientRect();
     if (x && x > 580) {
-      alert('You Win');
       context.handleCompleteLevel('ocean', 'completed');
       history.push('/worldmap');
     }
@@ -64,6 +64,7 @@ const OceanLevel = ({ history }) => {
         history.push('/worldmap')
       ) : context.isGameStarted ? (
         <div className={oceanStyles.oceanContainer}>
+          <DoomsdayTimer history={history} />
           <Timer />
           <img
             src="/assets/ocean/tortoiseBack.png"

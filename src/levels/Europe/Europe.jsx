@@ -3,6 +3,7 @@ import Draggable from 'react-draggable';
 import GameContext from '../../context/gameContext';
 
 import Timer from '../../components/Timer/Timer';
+import DoomsdayTimer from '../../components/DoomsdayTimer/DoomsdayTimer';
 import europeStyles from './europe.module.scss';
 
 const EuropeLevel = ({ history }) => {
@@ -34,7 +35,6 @@ const EuropeLevel = ({ history }) => {
   React.useEffect(() => {
     const { x } = draggableRope.current.getBoundingClientRect();
     if (x && x > 325) {
-      alert('You Win');
       context.handleCompleteLevel('europe', 'completed');
       history.push('/worldmap');
     }
@@ -63,6 +63,7 @@ const EuropeLevel = ({ history }) => {
         history.push('/worldmap')
       ) : context.isGameStarted ? (
         <div className={europeStyles.europe}>
+          <DoomsdayTimer history={history} />
           <Timer />
 
           <Draggable {...dragHandlers}>

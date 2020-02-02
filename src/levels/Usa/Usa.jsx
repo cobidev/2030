@@ -1,6 +1,7 @@
 import React from 'react';
 import GameContext from '../../context/gameContext';
 
+import DoomsdayTimer from '../../components/DoomsdayTimer/DoomsdayTimer';
 import Timer from '../../components/Timer/Timer';
 import usaStyles from './usa.module.scss';
 
@@ -72,7 +73,6 @@ const UsaLevel = ({ history }) => {
         console.log('How did you get here?');
     }
     if (wallLeftScore == 2 && wallMiddleScore == 2 && wallRightScore == 2) {
-      alert('You Win');
       context.handleCompleteLevel('usa', 'completed');
       history.push('/worldmap');
     }
@@ -85,6 +85,7 @@ const UsaLevel = ({ history }) => {
         history.push('/worldmap')
       ) : context.isGameStarted ? (
         <div className={usaStyles.usaContainer}>
+          <DoomsdayTimer history={history} />
           <Timer />
           <div className={usaStyles.player}></div>
           <div className={usaStyles.trump}></div>

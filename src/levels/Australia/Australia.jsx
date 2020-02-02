@@ -1,6 +1,7 @@
 import React from 'react';
 import GameContext from '../../context/gameContext';
 
+import DoomsdayTimer from '../../components/DoomsdayTimer/DoomsdayTimer';
 import Timer from '../../components/Timer/Timer';
 import australiaStyles from './australia.module.scss';
 
@@ -30,6 +31,7 @@ const AustraliaLevel = ({ history }) => {
         history.push('/worldmap')
       ) : context.isGameStarted ? (
         <div className={australiaStyles.australia}>
+          <DoomsdayTimer history={history} />
           <Timer />
         </div>
       ) : (
