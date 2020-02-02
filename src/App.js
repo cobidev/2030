@@ -71,7 +71,7 @@ const App = () => {
     >
       <div className="App">
         {window.location.pathname.includes('worldmap') ? (
-          <audio autoplay="autoplay" loop>
+          <audio autoplay="autoplay">
             <source src="assets/music/doom.mp3" />
           </audio>
         ) : null}
