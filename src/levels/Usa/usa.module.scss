@@ -1,0 +1,61 @@
+.usaContainer {
+  background-image: url('./usaBackground.png');
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.wallPiece {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+}
+
+.wallClickArea {
+  height: 100%;
+  width: 33%;
+}
+
+.wallClickMiddle {
+  position: absolute;
+  top: 0;
+  left: 33%;
+}
+
+.wallClickRight {
+  position: absolute;
+  top: 0;
+  left: 66%;
+}
+
+.player {
+  background-image: url('Player.gif');
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 425px;
+  left: 1000px;
+  z-index: 1;
+  background-repeat: no-repeat;
+  background-size: 50%;
+  pointer-events: none;
+}
+
+.trump {
+  background-image: url('Trumpty.gif');
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: -64px;
+  left: 225px;
+  z-index: 1;
+  background-repeat: no-repeat;
+  background-size: 50%;
+  pointer-events: none;
+}
